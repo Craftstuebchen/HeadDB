@@ -75,7 +75,7 @@
         <dependency>
             <groupId>com.github.MrSteppy</groupId>
             <artifactId>NexusLib</artifactId>
-            <version>e5d4e2d2c7</version>
+            <version>68a2318179</version>
         </dependency>
         <dependency>
             <groupId>com.github.TheSilentPro</groupId>

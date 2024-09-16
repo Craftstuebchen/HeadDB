@@ -13,6 +13,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.profile.PlayerProfile;
 import org.bukkit.profile.PlayerTextures;
+import org.jetbrains.annotations.NotNull;
 import tsp.headdb.HeadDB;
 import tsp.headdb.core.api.HeadAPI;
 import tsp.headdb.core.economy.BasicEconomyProvider;
@@ -298,7 +299,7 @@ public class Utils {
             }
         } else {
             try {
-                PlayerProfile profile = Bukkit.createPlayerProfile(head.getUniqueId(), head.getName());
+                PlayerProfile profile = Bukkit.createPlayerProfile(head.getUniqueId(), getPlayerProfileValidHeadName(head));
                 PlayerTextures textures = profile.getTextures();
                 String url = new String(Base64.getDecoder().decode(head.getTexture()));
                 textures.setSkin(new URL(url.substring("{\"textures\":{\"SKIN\":{\"url\":\"".length(), url.length() - "\"}}}".length())));
@@ -315,6 +316,13 @@ public class Utils {
         }
 
         return item;
+    }
+
+    private static @NotNull String getPlayerProfileValidHeadName(@NotNull Head head) {
+        //make sure name contains only valid chars
+        String name = head.getName().replaceAll("[^A-Za-z0-9_]", "_");
+        //length may not exceed 16
+        return name.substring(0, Math.min(16, name.length()));
     }
 
     public static int resolveInt(String raw) {
