@@ -6,7 +6,7 @@
 
     <groupId>tsp.headdb</groupId>
     <artifactId>HeadDB</artifactId>
-    <version>5.0.0-rc.11</version>
+    <version>5.0.1</version>
     <packaging>jar</packaging>
 
     <name>HeadDB</name>
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.20.2-R0.1-SNAPSHOT</version>
+            <version>1.21.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -73,9 +73,9 @@
 
         <!-- Hard Dependencies (Shaded) -->
         <dependency>
-            <groupId>com.github.TheSilentPro</groupId>
+            <groupId>com.github.MrSteppy</groupId>
             <artifactId>NexusLib</artifactId>
-            <version>45b4813899</version>
+            <version>e5d4e2d2c7</version>
         </dependency>
         <dependency>
             <groupId>com.github.TheSilentPro</groupId>
